@@ -1,10 +1,50 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
+import {foodList} from "./FoodList";
+
+declare var anime: any;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'regarding-food';
+export class AppComponent implements AfterViewInit {
+  title = 'Regarding Food';
+  pickedFood = "Search for meal";
+
+  ngAfterViewInit(): void {
+
+    // @ts-ignore
+    anime.timeline({loop: true})
+      .add({
+        targets: '.c2 .word',
+        scale: [14, 1],
+        opacity: [0, 1],
+        easing: "easeOutCirc",
+        duration: 800,
+        delay: (el: any, i: number) => 800 * i
+      }).add({
+      targets: '.c2',
+      opacity: 0,
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 1000
+    });
+
+  }
+
+  public clickPick() {
+    console.log("Picked...");
+    //get random value from array
+    this.pickedFood = this.chooseRandom(foodList)
+
+  }
+
+  private chooseRandom(foodList: string[]): string {
+    return foodList[Math.floor(Math.random() * foodList.length)];
+  }
+
+
 }
+
+
