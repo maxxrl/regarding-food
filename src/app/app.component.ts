@@ -18,7 +18,24 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
 
+    this.startAnimation();
+
+  }
+
+
+  public clickPick() {
+    console.log("Picked...");
+    this.startAnimation();
+    //get random value from array
+    this.pickedFood = this.chooseRandom(foodList)
     // @ts-ignore
+  }
+
+  private chooseRandom(foodList: string[]): string {
+    return foodList[Math.floor(Math.random() * foodList.length)];
+  }
+
+  private startAnimation(): void {
     anime.timeline({loop: false})
       .add({
         targets: '.c2 .word',
@@ -34,21 +51,7 @@ export class AppComponent implements AfterViewInit {
       easing: "easeOutExpo",
       delay: 1000
     });
-
   }
-
-
-  public clickPick() {
-    console.log("Picked...");
-    //get random value from array
-    this.pickedFood = this.chooseRandom(foodList)
-
-  }
-
-  private chooseRandom(foodList: string[]): string {
-    return foodList[Math.floor(Math.random() * foodList.length)];
-  }
-
 
 }
 
