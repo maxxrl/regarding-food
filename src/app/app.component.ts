@@ -12,10 +12,14 @@ export class AppComponent implements AfterViewInit {
   title = 'Regarding Food';
   pickedFood = "Search for meal";
 
+  constructor() {
+
+  }
+
   ngAfterViewInit(): void {
 
     // @ts-ignore
-    anime.timeline({loop: true})
+    anime.timeline({loop: false})
       .add({
         targets: '.c2 .word',
         scale: [14, 1],
@@ -25,13 +29,14 @@ export class AppComponent implements AfterViewInit {
         delay: (el: any, i: number) => 800 * i
       }).add({
       targets: '.c2',
-      opacity: 0,
+      opacity: 100,
       duration: 1000,
       easing: "easeOutExpo",
       delay: 1000
     });
 
   }
+
 
   public clickPick() {
     console.log("Picked...");
