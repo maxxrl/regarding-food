@@ -1,5 +1,6 @@
 import {AfterViewInit, Component} from '@angular/core';
-import {foodList} from "./FoodList";
+import {Category, Food, foodList} from "./FoodList";
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 declare var anime: any;
 
@@ -10,29 +11,64 @@ declare var anime: any;
 })
 export class AppComponent implements AfterViewInit {
   title = 'Regarding Food';
-  pickedFood = "Search for meal";
+  pickedFood: Food = {name: "Search for food", category: Category.NONE};
+  foodCategories: Category[] = [Category.NONE, Category.MEAT, Category.VEGETABLE];
+  filter: Category = Category.NONE;
 
   constructor() {
 
   }
 
   ngAfterViewInit(): void {
-
     this.startAnimation();
-
   }
 
 
   public clickPick() {
     console.log("Picked...");
+    console.log(this.filter, "Aktiver Filter");
     this.startAnimation();
+
     //get random value from array
-    this.pickedFood = this.chooseRandom(foodList)
-    // @ts-ignore
+    this.chooseRandom(foodList, this.filter).then(value => {
+      console.log("resolved");
+      this.pickedFood = value;
+      console.log(this.pickedFood, "Picked food");
+    });
+
   }
 
-  private chooseRandom(foodList: string[]): string {
-    return foodList[Math.floor(Math.random() * foodList.length)];
+  private chooseRandom(foodList: Food[], activeFilter: Category): Promise<Food> {
+
+
+    if (activeFilter === Category.NONE) {
+      console.log("List unfiltered");
+      return new Promise<Food>((res, rej) => {
+        const randomIndex = Math.floor(Math.random() * foodList.length);
+        console.log("Randomindex unfilt", randomIndex);
+        const selectedList = foodList[randomIndex]
+        res(selectedList);
+      })
+
+    } else {
+      const filteredList: Food[] = foodList.filter(value => value.category === activeFilter);
+      console.log("Filtered List", filteredList);
+      return new Promise<Food>((res, rej) => {
+        const randomIndex = Math.floor(Math.random() * filteredList.length);
+        console.log("Randomindex", randomIndex);
+        const selectedList = filteredList[randomIndex]
+        res(selectedList);
+      })
+    }
+  }
+
+  drop(event: CdkDragDrop<Food[]>) {
+    moveItemInArray(foodList, event.previousIndex, event.currentIndex);
+  }
+
+  public selectedFilter(event: Category): Category {
+    this.filter = event;
+    return event;
   }
 
   private startAnimation(): void {

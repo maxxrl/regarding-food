@@ -327,14 +327,27 @@
     </button>
   </div>
 
-
   <!-- Terminal -->
   <div class="terminal" [ngSwitch]="pickedFood">
-    <h1 class="c2">
-      <pre class="word">{{pickedFood}}</pre>
+    <h1 class="c2" *ngIf="pickedFood">
+      <pre class="word">{{pickedFood.name}}</pre>
     </h1>
-
   </div>
+
+  <h2>Filter</h2>
+  <mat-chip-list
+    class="example-chip"
+    cdkDropList
+    cdkDropListOrientation="horizontal"
+    (cdkDropListDropped)="drop($event)">
+    <mat-chip  (click)="selectedFilter(category)"
+
+              class="example-box"
+              *ngFor="let category of foodCategories">
+      {{category}}
+    </mat-chip>
+  </mat-chip-list>
+
 
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
     <title>Gray Clouds Background</title>
