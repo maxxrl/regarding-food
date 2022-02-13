@@ -92,7 +92,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 16px;
+    margin-top:10px;
   }
 
   .card {
@@ -309,29 +309,25 @@
     alt="Angular Logo"
     src="./assets/logo.png"
   />
-  <span>Regarding food by Susi & Max</span>
+  <span>Regarding food</span>
 </div>
 
 <div class="content" role="main">
-
-
-  <!-- Next Steps -->
-  <h2>Time to pick your food.</h2>
-  <input type="hidden" #selection>
-  <div class="card-container">
-    <button class="card card-small" (click)="clickPick()" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-      </svg>
-      <span>Pick</span>
-    </button>
-  </div>
 
   <!-- Terminal -->
   <div class="terminal" [ngSwitch]="pickedFood">
     <h1 class="c2" *ngIf="pickedFood">
       <pre class="word">{{pickedFood.name}}</pre>
     </h1>
+  </div>
+
+  <input type="hidden" #selection>
+  <div class="card-container">
+    <button class="card card-small" (click)="clickPick()" tabindex="0">
+      <span class="material-icons first-icon">restaurant</span>
+      <span class="middle-icon">Pick</span>
+      <span class="last-icon material-icons">restaurant</span>
+    </button>
   </div>
 
   <h2>Filter</h2>

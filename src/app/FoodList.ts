@@ -10,8 +10,8 @@ export enum Category {
 
 export const foodList: Food[] = [
   {name: "Spaghetti Bolognese", category: Category.MEAT},
-  {name: "BicMac Rolle", category: Category.MEAT},
-  {name: "Hotdog Rolle", category: Category.MEAT},
+  {name: "Big-Mac Rolle", category: Category.MEAT},
+  {name: "Hot-Dog Rolle", category: Category.MEAT},
   {name: "Gschlagene mit \nKartoffelbrei und Soße", category: Category.MEAT},
   {name: "Quarkbällchen", category: Category.VEGETABLE},
   {name: "Disney Land \nSpezialität", category: Category.VEGETABLE},
@@ -38,5 +38,6 @@ export const foodList: Food[] = [
   {name: "Hot-Dogs", category: Category.MEAT},
   {name: "La Scala Pizza", category: Category.MEAT},
   {name: "Mc Donalds", category: Category.MEAT},
-  {name: "Burger King", category: Category.MEAT}
+  {name: "Burger King", category: Category.MEAT},
+  {name: "Spiegeleier mit Toast", category: Category.VEGETABLE}
 ];
