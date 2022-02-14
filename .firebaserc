@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "regarding-food"
+  },
+  "targets": {
+    "regarding-food": {
+      "hosting": {
+        "regarding-food": [
+          "regarding-food"
+        ]
+      }
+    }
+  }
+}

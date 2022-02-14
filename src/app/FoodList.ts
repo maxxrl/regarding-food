@@ -1,10 +1,11 @@
 export interface Food {
+  id?: string,
   name: string,
   category: Category;
 }
 
 export enum Category {
-  MEAT="MEAT", VEGETABLE="VEGETABLE", NONE="NONE"
+  MEAT = "MEAT", VEGETABLE = "VEGETABLE", NONE = "NONE"
 }
 
 
@@ -39,5 +40,24 @@ export const foodList: Food[] = [
   {name: "La Scala Pizza", category: Category.MEAT},
   {name: "Mc Donalds", category: Category.MEAT},
   {name: "Burger King", category: Category.MEAT},
-  {name: "Spiegeleier mit Toast", category: Category.VEGETABLE}
+  {name: "Spiegeleier mit Toast", category: Category.VEGETABLE},
+  {name: "Butter Chicken mit Nan", category: Category.MEAT},
+  {name: "Grießbrei", category: Category.VEGETABLE},
+  {name: "Currywurst", category: Category.MEAT},
+  {name: "Thai-Curry Erdnuss\n Kokos Hühnchen", category: Category.MEAT},
+  {name: "Linsen mit Spätzle", category: Category.MEAT},
+  {name: "Kürbissuppe", category: Category.VEGETABLE},
+  {name: "Bifteki mit Reis", category: Category.MEAT},
+  {name: "Waffeln", category: Category.VEGETABLE},
+  {name: "Rahmgeschnetzeltes", category: Category.MEAT},
+  {name: "Flammkuchen", category: Category.MEAT},
+  {name: "Lasagne", category: Category.MEAT},
+  {name: "Maultaschen", category: Category.MEAT},
+  {name: "Omelette", category: Category.MEAT},
+  {name: "Chilli Con Carne", category: Category.MEAT},
+  {name: "Schupfnudeln", category: Category.MEAT},
+  {name: "Gulasch", category: Category.MEAT},
+  {name: "Spaghetti Carbonara", category: Category.MEAT},
+  {name: "Nudelsalat", category: Category.VEGETABLE},
+  {name: "Risotto mit Pilzen", category: Category.VEGETABLE}
 ];

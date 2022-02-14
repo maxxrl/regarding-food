@@ -105,6 +105,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "regarding-food:build:production",
+            "firebaseProject": "regarding-food",
+            "firebaseHostingSite": "regarding-food"
+          }
         }
       }
     }

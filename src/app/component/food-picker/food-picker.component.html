@@ -1,0 +1,27 @@
+<!-- Terminal -->
+<div class="terminal" [ngSwitch]="pickedFood">
+  <h1 class="terminal-text" *ngIf="pickedFood">
+    <pre class="word">{{pickedFood.name}}</pre>
+  </h1>
+</div>
+
+<input type="hidden" #selection>
+<div class="card-container">
+  <button class="card card-small" (click)="clickPick()" tabindex="0">
+    <span class="material-icons first-icon">restaurant</span>
+    <span class="middle-icon">Pick</span>
+    <span class="last-icon material-icons">restaurant</span>
+  </button>
+</div>
+
+<h2>Filter</h2>
+<mat-chip-list
+  class="example-chip">
+  <mat-chip
+    color="primary"
+    (click)="selectedFilter(category)"
+    class="example-box"
+    *ngFor="let category of foodCategories">
+    {{category}}
+  </mat-chip>
+</mat-chip-list>
