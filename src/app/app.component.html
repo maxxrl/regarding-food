@@ -1,17 +1,38 @@
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
+<!--<div class="toolbar" role="banner">
   <img
     width="40"
     alt="Angular Logo"
     src="./assets/maxx_rl_logo.png"
   />
   <span>{{title}}</span>
-</div>
+</div>-->
+
+<mat-toolbar class="toolbar">
+
+  <!--  <mat-icon>menu</mat-icon>-->
+    <img
+      width="40"
+      alt="Angular Logo"
+      src="./assets/maxx_rl_logo.png"
+    />
+
+  <span> Regarding food</span>
+  <span class="nav-spacer"></span>
+  <button routerLink="/pick-food" mat-icon-button aria-label="Example icon-button with heart icon">
+    <mat-icon>restaurant</mat-icon>
+  </button>
+  <button routerLink="/edit-food" mat-icon-button  aria-label="Example icon-button with share icon">
+    <mat-icon>edit</mat-icon>
+  </button>
+</mat-toolbar>
+
+
+
 
 <div class="content" role="main">
 
-  <app-food-picker [foodListStore]="foodListStore"></app-food-picker>
-  <app-edit-food [foodListStore]="foodListStore"></app-edit-food>
+
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
     <title>Gray Clouds Background</title>
     <path id="Path_39" data-name="Path 39"
@@ -20,4 +41,7 @@
   </svg>
 </div>
 
-<router-outlet></router-outlet>
+<router-outlet>
+  <app-food-picker [foodListStore]="foodListStore"></app-food-picker>
+  <app-edit-food [foodListStore]="foodListStore"></app-edit-food>
+</router-outlet>

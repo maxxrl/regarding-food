@@ -13,13 +13,18 @@ import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 import {AngularFireModule} from "@angular/fire/compat";
 import {EditFoodComponent} from './component/edit-food/edit-food.component';
 import {FoodPickerComponent} from './component/food-picker/food-picker.component';
+import { FoodListComponent } from './component/food-list/food-list.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     EditFoodComponent,
-    FoodPickerComponent
+    FoodPickerComponent,
+    FoodListComponent
   ],
   imports: [
     BrowserModule,
@@ -27,10 +32,13 @@ import {FoodPickerComponent} from './component/food-picker/food-picker.component
     BrowserAnimationsModule,
     MatChipsModule,
     DragDropModule,
+    MatToolbarModule,
     MatListModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
