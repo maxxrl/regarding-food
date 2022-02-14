@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input} from '@angular/core';
 import {Category, Food} from "../../FoodList";
 
 declare var anime: any;
@@ -8,7 +8,7 @@ declare var anime: any;
   templateUrl: './food-picker.component.html',
   styleUrls: ['./food-picker.component.scss']
 })
-export class FoodPickerComponent implements OnInit, AfterViewInit {
+export class FoodPickerComponent implements AfterViewInit {
 
   // @ts-ignore
   @Input() foodListStore: Food[];
@@ -18,9 +18,6 @@ export class FoodPickerComponent implements OnInit, AfterViewInit {
   foodCategories: Category[] = [Category.NONE, Category.MEAT, Category.VEGETABLE];
 
   constructor() {
-  }
-
-  ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
@@ -34,14 +31,12 @@ export class FoodPickerComponent implements OnInit, AfterViewInit {
 
   public clickPick() {
     console.log("Picked...");
-    console.log(this.filter, "Aktiver Filter");
+    console.log(this.filter, "active filtering");
     this.startAnimation();
 
     //get random value from array
     this.chooseRandom(this.foodListStore, this.filter).then(value => {
-      console.log("resolved");
       this.pickedFood = value;
-      console.log(this.pickedFood, "Picked food");
     });
 
   }
@@ -50,20 +45,16 @@ export class FoodPickerComponent implements OnInit, AfterViewInit {
 
 
     if (activeFilter === Category.NONE) {
-      console.log("List unfiltered");
       return new Promise<Food>((res, rej) => {
         const randomIndex = Math.floor(Math.random() * foodList.length);
-        console.log("Randomindex unfilt", randomIndex);
         const selectedList = foodList[randomIndex]
         res(selectedList);
       })
 
     } else {
       const filteredList: Food[] = foodList.filter(value => value.category === activeFilter);
-      console.log("Filtered List", filteredList);
       return new Promise<Food>((res, rej) => {
         const randomIndex = Math.floor(Math.random() * filteredList.length);
-        console.log("Randomindex", randomIndex);
         const selectedList = filteredList[randomIndex]
         res(selectedList);
       })
@@ -73,7 +64,7 @@ export class FoodPickerComponent implements OnInit, AfterViewInit {
   private startAnimation(): void {
     anime.timeline({loop: false})
       .add({
-        targets: '.c2 .word',
+        targets: '.terminal-text .word',
         scale: [14, 1],
         opacity: [0, 1],
         easing: "easeOutCirc",
