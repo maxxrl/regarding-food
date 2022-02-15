@@ -28,7 +28,12 @@
 }
 
 
-
+.router-link-active{
+  background: white;
+  .material-icons{
+    color:black;
+  }
+}
 
 /* Background clouds */
 svg#clouds {
