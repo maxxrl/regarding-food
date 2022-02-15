@@ -8,30 +8,31 @@
   <span>{{title}}</span>
 </div>-->
 
+
+
 <mat-toolbar class="toolbar">
 
   <!--  <mat-icon>menu</mat-icon>-->
-    <img
-      width="40"
-      alt="Angular Logo"
-      src="./assets/maxx_rl_logo.png"
-    />
+  <img
+    width="40"
+    alt="Angular Logo"
+    src="./assets/maxx_rl_logo.png"
+  />
 
-  <span> Regarding food</span>
+  <span>Regarding food</span>
   <span class="nav-spacer"></span>
   <button routerLink="/pick-food" mat-icon-button aria-label="Example icon-button with heart icon">
     <mat-icon>restaurant</mat-icon>
   </button>
-  <button routerLink="/edit-food" mat-icon-button  aria-label="Example icon-button with share icon">
+  <button routerLink="/edit-food" mat-icon-button aria-label="Example icon-button with share icon">
     <mat-icon>edit</mat-icon>
   </button>
 </mat-toolbar>
 
 
-
-
 <div class="content" role="main">
 
+  <router-outlet></router-outlet>
 
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
     <title>Gray Clouds Background</title>
@@ -40,8 +41,3 @@
           transform="translate(142.69 -634.312)" fill="#eee"/>
   </svg>
 </div>
-
-<router-outlet>
-  <app-food-picker [foodListStore]="foodListStore"></app-food-picker>
-  <app-edit-food [foodListStore]="foodListStore"></app-edit-food>
-</router-outlet>

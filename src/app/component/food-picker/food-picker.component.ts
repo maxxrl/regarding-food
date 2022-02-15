@@ -1,5 +1,7 @@
-import {AfterViewInit, Component, Input} from '@angular/core';
+import {AfterViewInit, Component, Input, OnDestroy} from '@angular/core';
 import {Category, Food} from "../../FoodList";
+import {FoodService} from "../../service/food.service";
+import {Subject} from "rxjs";
 
 declare var anime: any;
 
@@ -10,18 +12,30 @@ declare var anime: any;
 })
 export class FoodPickerComponent implements AfterViewInit {
 
-  // @ts-ignore
-  @Input() foodListStore: Food[];
-
+  foodList: Food[] = [];
   filter: Category = Category.NONE;
   pickedFood: Food = {name: "Search for food", category: Category.NONE};
   foodCategories: Category[] = [Category.NONE, Category.MEAT, Category.VEGETABLE];
 
-  constructor() {
+  constructor(private foodService: FoodService) {
+
+  }
+  ngOnInit(): void {
+    this.foodService.foodListChange.subscribe(foodList => {
+      this.foodList = foodList;
+      console.log(this.foodList, "loaded on change");
+    })
+    if (this.foodList.length === 0){
+      this.foodList = this.foodService.getFoodList();
+    }
   }
 
   ngAfterViewInit(): void {
     this.startAnimation();
+  }
+  ngOnDestroy(): void{
+    console.log("destroyed");
+ /*   this.foodService.foodListChange.unsubscribe();*/
   }
 
   public selectedFilter(event: Category): Category {
@@ -35,7 +49,7 @@ export class FoodPickerComponent implements AfterViewInit {
     this.startAnimation();
 
     //get random value from array
-    this.chooseRandom(this.foodListStore, this.filter).then(value => {
+    this.chooseRandom(this.foodList, this.filter).then(value => {
       this.pickedFood = value;
     });
 

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Food} from "./FoodList";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {FirestoreService} from "./service/firestore.service";
+import {FoodService} from "./service/food.service";
 
 
 @Component({
@@ -11,15 +12,15 @@ import {FirestoreService} from "./service/firestore.service";
 })
 export class AppComponent implements OnInit {
   title = 'Regarding Food';
-  foodListStore: Food[] = [];
 
-  constructor(private store: AngularFirestore, private firestoreService: FirestoreService) {
+  constructor(private store: AngularFirestore, private firestoreService: FirestoreService, private foodService: FoodService) {
     // doMigration();
   }
 
   ngOnInit() {
     this.firestoreService.getFoodList().subscribe((foodList: Food[]) => {
-      this.foodListStore = foodList;
+      /*      this.foodListStore = foodList;*/
+      this.foodService.saveFoodList(foodList);
       console.log("Retrieved foodlist", foodList);
     })
   }

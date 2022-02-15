@@ -1,1 +1,9 @@
-<p>food-list works!</p>
+
+<h2>Food List</h2>
+
+  <div>
+    <mat-list role="list" *ngFor="let food of foodList">
+      <mat-list-item role="listitem">{{food.name}} | {{food.category}}</mat-list-item>
+    </mat-list>
+  </div>
+
