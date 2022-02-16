@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Category} from "../FoodList";
+import {Category, FoodWeek} from "../FoodList";
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,8 @@ export class SessionStorageService {
   }
 
   public FILTER_KEY = "FILTER";
+  public FOOD_WEEK = "FOOT_WEEK";
+
 
   public getFilter(): Category {
     const filter = sessionStorage.getItem(this.FILTER_KEY);
@@ -18,6 +20,18 @@ export class SessionStorageService {
 
   public setFilter(value: string): void {
     sessionStorage.setItem(this.FILTER_KEY, value);
+  }
+
+  public getFoodWeek(): FoodWeek[] {
+    const foodWeekString = sessionStorage.getItem(this.FOOD_WEEK);
+    if (foodWeekString) {
+      return JSON.parse(foodWeekString);
+    }
+    return [];
+  }
+
+  public saveFoodWeek(foodWeek: FoodWeek): void {
+    sessionStorage.setItem(this.FOOD_WEEK, JSON.stringify(foodWeek));
   }
 
 

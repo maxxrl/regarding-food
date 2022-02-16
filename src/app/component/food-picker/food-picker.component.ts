@@ -2,6 +2,7 @@ import {AfterViewInit, Component} from '@angular/core';
 import {Category, Food} from "../../FoodList";
 import {FirestoreService} from "../../service/firestore.service";
 import {SessionStorageService} from "../../service/session-storage.service";
+import {RandomService} from "../../service/random.service";
 
 declare var anime: any;
 
@@ -19,18 +20,17 @@ export class FoodPickerComponent implements AfterViewInit {
 
   constructor(
     private firestoreService: FirestoreService,
-    private sessionStorageService: SessionStorageService
+    private sessionStorageService: SessionStorageService,
+    private randomService: RandomService
   ) {
   }
 
   ngOnInit(): void {
     this.firestoreService.getFoodList().subscribe((foodList: Food[]) => {
-      console.log("Retrieved foodlist", foodList);
       this.foodList = foodList;
     })
 
     this.filter = this.sessionStorageService.getFilter();
-    console.log(this.filter);
 
   }
 
@@ -50,14 +50,13 @@ export class FoodPickerComponent implements AfterViewInit {
     this.startAnimation();
 
     //get random value from array
-    this.chooseRandom(this.foodList, this.filter).then(value => {
+    this.randomService.chooseRandomFoodWithFilter(this.foodList, this.filter).then(value => {
       this.pickedFood = value;
     });
 
   }
 
-  private chooseRandom(foodList: Food[], activeFilter: Category): Promise<Food> {
-
+/*  private chooseRandom(foodList: Food[], activeFilter: Category): Promise<Food> {
 
     if (activeFilter === Category.NONE) {
       return new Promise<Food>((res, rej) => {
@@ -74,7 +73,7 @@ export class FoodPickerComponent implements AfterViewInit {
         res(selectedList);
       })
     }
-  }
+  }*/
 
   private startAnimation(): void {
     anime.timeline({loop: false})

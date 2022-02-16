@@ -23,6 +23,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {DialogBoxComponent} from './component/dialog-box/dialog-box.component';
 import {FormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
+import { FoodPlanComponent } from './component/food-plan/food-plan.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {MatSelectModule} from "@angular/material/select";
     AppComponent,
     FoodPickerComponent,
     FoodListComponent,
-    DialogBoxComponent
+    DialogBoxComponent,
+    FoodPlanComponent
   ],
   imports: [
     BrowserModule,

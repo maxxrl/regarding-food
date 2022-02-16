@@ -8,6 +8,16 @@ export enum Category {
   MEAT = "MEAT", VEGETABLE = "VEGETABLE", NONE = "NONE", RESTAURANT = "RESTAURANT"
 }
 
+export interface FoodPlan {
+  breakfast: Food;
+  lunch: Food;
+  dinner: Food;
+}
+
+export interface FoodWeek {
+  plan: FoodPlan
+  name: string
+}
 
 
 export const foodList: Food[] = [
