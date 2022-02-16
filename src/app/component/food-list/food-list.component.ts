@@ -1,5 +1,4 @@
-import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {FoodService} from "../../service/food.service";
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Food} from "../../FoodList";
 import {MatTable} from "@angular/material/table";
 import {DialogBoxComponent} from "../dialog-box/dialog-box.component";
@@ -68,6 +67,7 @@ export class FoodListComponent implements OnInit {
     this.foodList = this.foodList.filter((value, key) => {
       if (value.id == row_obj.id) {
         value.name = row_obj.name;
+        value.category = row_obj.category;
       }
       this.firestoreService.updateFood(value).then(value1 => {
         console.log("successfully updated");

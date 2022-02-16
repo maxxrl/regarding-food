@@ -1,8 +1,7 @@
-import {AfterViewInit, Component, Input, OnDestroy} from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import {Category, Food} from "../../FoodList";
-import {FoodService} from "../../service/food.service";
-import {Subject} from "rxjs";
 import {FirestoreService} from "../../service/firestore.service";
+import {SessionStorageService} from "../../service/session-storage.service";
 
 declare var anime: any;
 
@@ -16,10 +15,12 @@ export class FoodPickerComponent implements AfterViewInit {
   foodList: Food[] = [];
   filter: Category = Category.NONE;
   pickedFood: Food = {name: "Search for food", category: Category.NONE};
-  foodCategories: Category[] = [Category.NONE, Category.MEAT, Category.VEGETABLE];
+  foodCategories: Category[] = [Category.NONE, Category.MEAT, Category.VEGETABLE, Category.RESTAURANT];
 
-  constructor(private firestoreService: FirestoreService) {
-
+  constructor(
+    private firestoreService: FirestoreService,
+    private sessionStorageService: SessionStorageService
+  ) {
   }
 
   ngOnInit(): void {
@@ -27,6 +28,10 @@ export class FoodPickerComponent implements AfterViewInit {
       console.log("Retrieved foodlist", foodList);
       this.foodList = foodList;
     })
+
+    this.filter = this.sessionStorageService.getFilter();
+    console.log(this.filter);
+
   }
 
   ngAfterViewInit(): void {
@@ -35,6 +40,7 @@ export class FoodPickerComponent implements AfterViewInit {
 
   public selectedFilter(event: Category): Category {
     this.filter = event;
+    this.sessionStorageService.setFilter(this.filter);
     return event;
   }
 

@@ -5,8 +5,9 @@ export interface Food {
 }
 
 export enum Category {
-  MEAT = "MEAT", VEGETABLE = "VEGETABLE", NONE = "NONE"
+  MEAT = "MEAT", VEGETABLE = "VEGETABLE", NONE = "NONE", RESTAURANT = "RESTAURANT"
 }
+
 
 
 export const foodList: Food[] = [

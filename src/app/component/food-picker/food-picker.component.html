@@ -21,6 +21,7 @@
     color="primary"
     (click)="selectedFilter(category)"
     class="example-box"
+    [ngClass]="{'active-filter': category === filter}"
     *ngFor="let category of foodCategories">
     {{category}}
   </mat-chip>

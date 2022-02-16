@@ -20,8 +20,9 @@ import {MatTableModule} from "@angular/material/table";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatDialogModule} from "@angular/material/dialog";
-import { DialogBoxComponent } from './component/dialog-box/dialog-box.component';
+import {DialogBoxComponent} from './component/dialog-box/dialog-box.component';
 import {FormsModule} from "@angular/forms";
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -31,26 +32,27 @@ import {FormsModule} from "@angular/forms";
     FoodListComponent,
     DialogBoxComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatChipsModule,
-        DragDropModule,
-        MatToolbarModule,
-        MatTableModule,
-        MatDialogModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        MatListModule,
-        AngularFireModule.initializeApp(environment.firebase),
-        provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideFirestore(() => getFirestore()),
-        MatIconModule,
-        MatButtonModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatChipsModule,
+    DragDropModule,
+    MatToolbarModule,
+    MatTableModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatListModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    MatIconModule,
+    MatButtonModule,
+    FormsModule,
+    MatSelectModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

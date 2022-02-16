@@ -5,7 +5,11 @@
     <input placeholder="{{action}} Name" matInput [(ngModel)]="local_data.name">
   </mat-form-field>
   <mat-form-field *ngIf="action != 'Delete'; else null">
-    <input placeholder="{{action}} Category" matInput [(ngModel)]="local_data.category">
+    <mat-select [(ngModel)]="local_data.category">
+      <mat-option value="MEAT">Meat</mat-option>
+      <mat-option value="VEGETABLE">Vegetable</mat-option>
+      <mat-option value="RESTAURANT">Restaurant</mat-option>
+    </mat-select>
   </mat-form-field>
   <ng-template #elseTemplate>
     Sure to delete <b>{{local_data.name}}</b>?
