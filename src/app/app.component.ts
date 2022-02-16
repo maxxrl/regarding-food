@@ -10,40 +10,20 @@ import {FoodService} from "./service/food.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'Regarding Food';
 
   constructor(private store: AngularFirestore, private firestoreService: FirestoreService, private foodService: FoodService) {
     // doMigration();
   }
 
-  ngOnInit() {
+/*  ngOnInit() {
     this.firestoreService.getFoodList().subscribe((foodList: Food[]) => {
-      /*      this.foodListStore = foodList;*/
+      /!*      this.foodListStore = foodList;*!/
       this.foodService.saveFoodList(foodList);
       console.log("Retrieved foodlist", foodList);
     })
-  }
-
-  addFood(food: Food): void {
-    this.firestoreService.addFood(food).then(value => {
-      console.log("Successfully added food to store.", food);
-    })
-  }
-
-  removeFood(food: Food): void {
-    this.firestoreService.deleteFood(food).then(value => {
-      console.log("Successfully deleted food from store", food);
-    })
-  }
-
-
-  private doMigration() {
-    /*  foodList.forEach(value => {
-    this.firestoreService.addFood(value);
-  })*/
-  }
-
+  }*/
 }
 
 

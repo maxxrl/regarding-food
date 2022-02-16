@@ -11,35 +11,46 @@ import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
 import {environment} from '../environments/environment';
 import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 import {AngularFireModule} from "@angular/fire/compat";
-import {EditFoodComponent} from './component/edit-food/edit-food.component';
 import {FoodPickerComponent} from './component/food-picker/food-picker.component';
 import { FoodListComponent } from './component/food-list/food-list.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {MatTableModule} from "@angular/material/table";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatDialogModule} from "@angular/material/dialog";
+import { DialogBoxComponent } from './component/dialog-box/dialog-box.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    EditFoodComponent,
     FoodPickerComponent,
-    FoodListComponent
+    FoodListComponent,
+    DialogBoxComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatChipsModule,
-    DragDropModule,
-    MatToolbarModule,
-    MatListModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
-    MatIconModule,
-    MatButtonModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatChipsModule,
+        DragDropModule,
+        MatToolbarModule,
+        MatTableModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatListModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirestore(() => getFirestore()),
+        MatIconModule,
+        MatButtonModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

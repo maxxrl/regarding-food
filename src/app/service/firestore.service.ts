@@ -11,14 +11,22 @@ import {
   updateDoc
 } from "@angular/fire/firestore";
 import {Category, Food} from "../FoodList";
-import {Observable} from "rxjs";
+import {Observable, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirestoreService {
 
+  foodList: Food[] = [];
+  foodListChange: Subject<Food[]> = new Subject<Food[]>();
+
   constructor(private firestore: Firestore) {
+  }
+
+  public saveFoodList(foodList: Food[]) {
+    this.foodList = foodList;
+    this.foodListChange.next(foodList);
   }
 
 

@@ -2,6 +2,7 @@ import {AfterViewInit, Component, Input, OnDestroy} from '@angular/core';
 import {Category, Food} from "../../FoodList";
 import {FoodService} from "../../service/food.service";
 import {Subject} from "rxjs";
+import {FirestoreService} from "../../service/firestore.service";
 
 declare var anime: any;
 
@@ -17,25 +18,19 @@ export class FoodPickerComponent implements AfterViewInit {
   pickedFood: Food = {name: "Search for food", category: Category.NONE};
   foodCategories: Category[] = [Category.NONE, Category.MEAT, Category.VEGETABLE];
 
-  constructor(private foodService: FoodService) {
+  constructor(private firestoreService: FirestoreService) {
 
   }
+
   ngOnInit(): void {
-    this.foodService.foodListChange.subscribe(foodList => {
+    this.firestoreService.getFoodList().subscribe((foodList: Food[]) => {
+      console.log("Retrieved foodlist", foodList);
       this.foodList = foodList;
-      console.log(this.foodList, "loaded on change");
     })
-    if (this.foodList.length === 0){
-      this.foodList = this.foodService.getFoodList();
-    }
   }
 
   ngAfterViewInit(): void {
     this.startAnimation();
-  }
-  ngOnDestroy(): void{
-    console.log("destroyed");
- /*   this.foodService.foodListChange.unsubscribe();*/
   }
 
   public selectedFilter(event: Category): Category {
