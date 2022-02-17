@@ -1,4 +1,6 @@
+<h2>Dinner this week?</h2>
 <div class="food-list-table">
+
   <table mat-table [dataSource]="foodWeek" #mytable class="">
 
     <!-- Weekday Column -->
@@ -9,11 +11,9 @@
 
     <!-- Name Column -->
     <ng-container matColumnDef="weekday">
-      <th mat-header-cell *matHeaderCellDef>Plan</th>
+      <th mat-header-cell *matHeaderCellDef>Dinner</th>
       <td mat-cell *matCellDef="let element">
-        Breakfast: {{element.plan.breakfast.name}}<br>
-        Lunch: {{element.plan.lunch.name}}<br>
-        Dinner: {{element.plan.dinner.name}}</td>
+        {{element.plan.dinner.name}}</td>
     </ng-container>
 
 

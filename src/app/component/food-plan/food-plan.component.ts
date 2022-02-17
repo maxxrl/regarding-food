@@ -11,7 +11,7 @@ import {RandomService} from "../../service/random.service";
 })
 export class FoodPlanComponent implements OnInit {
   foodList: Food[] = [];
-  displayedColumns: string[] = ['weekday', 'name'];
+  displayedColumns: string[] = ['name', 'weekday'];
 
   // @ts-ignore
   foodWeek: FoodWeek[];
