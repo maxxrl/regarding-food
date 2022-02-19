@@ -5,8 +5,6 @@ import {SessionStorageService} from "../../service/session-storage.service";
 import {RandomService} from "../../service/random.service";
 import {AnimationService} from "../../service/animation.service";
 
-declare var anime: any;
-
 @Component({
   selector: 'app-food-picker',
   templateUrl: './food-picker.component.html',
@@ -18,6 +16,7 @@ export class FoodPickerComponent implements AfterViewInit {
   filter: Category = Category.NONE;
   pickedFood: Food = {name: "Search for food", category: Category.NONE};
   foodCategories: Category[] = [Category.NONE, Category.MEAT, Category.VEGETABLE, Category.RESTAURANT];
+  buttonText = "Pick";
 
   constructor(
     private firestoreService: FirestoreService,
@@ -31,13 +30,15 @@ export class FoodPickerComponent implements AfterViewInit {
     this.firestoreService.getFoodList().subscribe((foodList: Food[]) => {
       this.foodList = foodList;
     })
-
     this.filter = this.sessionStorageService.getFilter();
-
   }
 
   ngAfterViewInit(): void {
     this.animationService.animateTextByCssClass(this.ANIMATION_CLASS_NAME)
+  }
+
+  rotateButtonClicked(): void {
+    this.chooseRandomWithFilter();
   }
 
   public selectedFilter(event: Category): Category {
@@ -46,11 +47,8 @@ export class FoodPickerComponent implements AfterViewInit {
     return event;
   }
 
-  public clickPick() {
-    console.log("Picked...");
-    console.log(this.filter, "active filtering");
+  public chooseRandomWithFilter() {
     this.animationService.animateTextByCssClass(this.ANIMATION_CLASS_NAME)
-    this.animationService.animateTextByCssClass("button-picker-wrapper")
     //get random value from array
     this.randomService.chooseRandomFoodWithFilter(this.foodList, this.filter).then(value => {
       this.pickedFood = value;

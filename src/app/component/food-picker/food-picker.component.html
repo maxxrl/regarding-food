@@ -5,15 +5,7 @@
   </h1>
 </div>
 
-
-<div class="button-picker-wrapper">
-  <button color="primary" mat-raised-button mat-button class="" (click)="clickPick()" tabindex="0">
-    <span class="middle-icon">Pick</span>
-  </button>
-</div>
-
-
-
+<app-rotate-button [buttonText]=buttonText (buttonClickEvent)="rotateButtonClicked()"></app-rotate-button>
 
 <mat-chip-list
   class="example-chip">
@@ -26,3 +18,5 @@
     {{category}}
   </mat-chip>
 </mat-chip-list>
+
+
