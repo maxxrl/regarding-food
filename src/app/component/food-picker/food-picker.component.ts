@@ -50,6 +50,7 @@ export class FoodPickerComponent implements AfterViewInit {
     console.log("Picked...");
     console.log(this.filter, "active filtering");
     this.animationService.animateTextByCssClass(this.ANIMATION_CLASS_NAME)
+    this.animationService.animateTextByCssClass("button-picker-wrapper")
     //get random value from array
     this.randomService.chooseRandomFoodWithFilter(this.foodList, this.filter).then(value => {
       this.pickedFood = value;
