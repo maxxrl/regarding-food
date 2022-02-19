@@ -1,16 +1,17 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {Food} from "../../FoodList";
 import {MatTable} from "@angular/material/table";
 import {DialogBoxComponent} from "../dialog-box/dialog-box.component";
 import {MatDialog} from "@angular/material/dialog";
 import {FirestoreService} from "../../service/firestore.service";
+import {AnimationService} from "../../service/animation.service";
 
 @Component({
   selector: 'app-food-list',
   templateUrl: './food-list.component.html',
   styleUrls: ['./food-list.component.scss']
 })
-export class FoodListComponent implements OnInit {
+export class FoodListComponent implements OnInit, AfterViewInit {
   foodList: Food[] = [];
   displayedColumns: string[] = ['category', 'name', 'action'];
 
@@ -19,8 +20,13 @@ export class FoodListComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    private firestoreService: FirestoreService
+    private firestoreService: FirestoreService,
+    private animationService: AnimationService
   ) {
+  }
+
+  ngAfterViewInit() {
+    this.animationService.animateTextByCssClass("food-list-table");
   }
 
   ngOnInit(): void {

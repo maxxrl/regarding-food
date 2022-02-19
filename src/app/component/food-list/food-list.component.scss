@@ -1,29 +1,33 @@
 
-h2{
-  padding-left:24px;
+h2 {
+  padding-left: 24px;
 }
 
 .mat-column-name {
   word-wrap: break-word;
   width: calc(100% - 25px);
+  color: white;
 }
 
 .mat-column-category {
-width:100px;
+  width: 100px;
+  color: white;
 }
 
 .mat-column-action {
- width:60px;
+  width: 60px;
+  color: white;
 }
 
 .food-list-table {
   width: 100%;
-  overflow-y:scroll;
-  max-height:90%;
+  overflow-y: scroll;
+  max-height: 90%;
 }
+
 :host {
   width: 100%;
-  height:100%;
+  height: 100%;
 }
 
 @media (max-width: 450px) {
@@ -32,7 +36,7 @@ width:100px;
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
-    height:100%;
+    height: 100%;
   }
 }
 
@@ -41,20 +45,21 @@ width:100px;
   .container {
     width: 70%;
     margin: 0 auto;
-    height:100%;
+    height: 100%;
     overflow: hidden;
   }
 
 }
 
-.add-button-container{
- position:fixed;
-  bottom:40px;
+.add-button-container {
+  position: fixed;
+  bottom: 40px;
   right: 50px;
 
 }
 
 
-table{
-  width:100%;
+table {
+  width: 100%;
+  background-color: #3f51b5;
 }
