@@ -6,7 +6,7 @@ import {AnimationService} from "../../service/animation.service";
   templateUrl: './rotate-button.component.html',
   styleUrls: ['./rotate-button.component.scss']
 })
-export class RotateButtonComponent implements OnInit, AfterViewInit {
+export class RotateButtonComponent implements AfterViewInit {
 
   ANIMATION_CLASS_NAME = "button-wrapper";
   @Output() buttonClickEvent = new EventEmitter<void>();
@@ -18,15 +18,13 @@ export class RotateButtonComponent implements OnInit, AfterViewInit {
   ) {
   }
 
-  ngOnInit(): void {
-  }
-
   ngAfterViewInit() {
     this.animationService.rotateButtonByCssClass(this.ANIMATION_CLASS_NAME);
   }
 
   clickButton() {
     this.buttonClickEvent.emit();
+    this.animationService.rotateButtonByCssClass(this.ANIMATION_CLASS_NAME);
   }
 
 }

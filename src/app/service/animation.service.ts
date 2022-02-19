@@ -17,7 +17,7 @@ export class AnimationService {
         scale: [14, 1],
         opacity: [0, 1],
         easing: "easeOutCirc",
-        duration: 2000,
+        duration: 3500,
         delay: (el: any, i: number) => 800 * i
       })
   }
@@ -27,11 +27,11 @@ export class AnimationService {
     anime.timeline({loop: false})
       .add({
         targets: '.' + cssClassName,
-        rotate: 720,
+        rotate: [0, 720],
         duration: 5000,
-        elasticity: 400,
+        elasticity: 500,
         easing: 'easeOutElastic',
-        delay: (el: any, i: number) => 80 * i
+        delay: (el: any, i: number) => 800 * i
       })
 
   }
