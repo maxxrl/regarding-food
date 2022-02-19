@@ -5,7 +5,7 @@
   </h1>
 </div>
 
-<input type="hidden" #selection>
+
 <div class="card-container">
   <button class="card card-small" (click)="clickPick()" tabindex="0">
     <span class="material-icons first-icon">restaurant</span>
@@ -14,7 +14,9 @@
   </button>
 </div>
 
-<h2>Filter</h2>
+
+
+
 <mat-chip-list
   class="example-chip">
   <mat-chip
@@ -26,5 +28,3 @@
     {{category}}
   </mat-chip>
 </mat-chip-list>
-
-<app-food-plan></app-food-plan>
