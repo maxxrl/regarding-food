@@ -1,46 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-
-html, body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-
-}
-
-:host {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 14px;
-  color: #333;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 8px 0;
-}
-
-p {
-  margin: 0;
-}
-
-.spacer {
-  flex: 1;
-}
-
-
-
-
- /* Animation area */
-
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
 *{
@@ -68,7 +25,7 @@ body{
 
 
 .area{
-  background: #3399ff!important;
+  background: #4e54c8!important;
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
   width: 100%;
   height:100vh;
@@ -188,14 +145,3 @@ body{
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
