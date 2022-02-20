@@ -5,7 +5,7 @@ import {FoodPickerComponent} from "./component/food-picker/food-picker.component
 
 const routes: Routes = [
   {path: 'pick-food', component: FoodPickerComponent, data: {animation: 'FoodPickerComponent'}},
-  {path: '', component: FoodPickerComponent, data: {animation: 'FoodPickerComponent'}},
+  {path: '', redirectTo: '/pick-food', pathMatch: 'full'},
   {path: 'list-food', component: FoodListComponent, data: {animation: 'FoodListComponent'}},
   {path: 'pick-food', redirectTo: '/pick-food', pathMatch: 'full', data: {animation: 'FoodPickerComponent'}},
 ];

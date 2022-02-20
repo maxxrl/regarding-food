@@ -27,7 +27,7 @@ export class FoodListComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.animationService.animateTextByCssClass("food-list-table");
+    // this.animationService.animateTextByCssClass("food-list-table");
   }
 
   ngOnInit(): void {

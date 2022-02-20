@@ -14,10 +14,10 @@ export class AnimationService {
     anime.timeline({loop: false})
       .add({
         targets: '.' + cssClassName,
-        scale: [14, 1],
+        scale: [25, 1],
         opacity: [0, 1],
         easing: "easeOutCirc",
-        duration: 1500,
+        duration: [1000],
         delay: (el: any, i: number) => 800 * i
       })
   }

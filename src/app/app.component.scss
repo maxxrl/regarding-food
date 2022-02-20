@@ -18,7 +18,7 @@ app-background {
   align-items: stretch;
 }
 
-.header{
+.header {
   display: flex;
   align-items: center;
 }
@@ -32,6 +32,12 @@ app-background {
   flex: 1 1 auto;
 }
 
+.router-link-active {
+  background: white;
 
+  .material-icons {
+    color: black;
+  }
+}
 
 
