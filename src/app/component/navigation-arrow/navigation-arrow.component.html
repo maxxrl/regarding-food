@@ -1,0 +1,6 @@
+<div *ngIf="isFoodListRoute()" (click)=navigateToPicker()>
+  <mat-icon class="navigation-arrow" color="primary">keyboard_arrow_left</mat-icon>
+</div>
+<div *ngIf="isFoodPickerRoute()" (click)="navigateToList()">
+  <mat-icon class="navigation-arrow" color="primary">keyboard_arrow_right</mat-icon>
+</div>

@@ -22,21 +22,7 @@ export class AppComponent {
     return outlet?.activatedRouteData?.['animation'];
   }
 
-  navigateToList(): void {
-    this.router.navigate(['list-food']);
-  }
 
-  navigateToPicker(): void {
-    this.router.navigate(['pick-food']);
-  }
-
-  public isFoodPickerRoute(): boolean {
-    return this.router.url === "/pick-food";
-  }
-
-  public isFoodListRoute(): boolean {
-    return this.router.url === "/list-food";
-  }
 
 }
 

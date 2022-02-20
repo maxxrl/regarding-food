@@ -26,6 +26,7 @@ import {MatSelectModule} from "@angular/material/select";
 import { FoodPlanComponent } from './component/food-plan/food-plan.component';
 import { BackgroundComponent } from './component/background/background.component';
 import { RotateButtonComponent } from './component/rotate-button/rotate-button.component';
+import { NavigationArrowComponent } from './component/navigation-arrow/navigation-arrow.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { RotateButtonComponent } from './component/rotate-button/rotate-button.c
     DialogBoxComponent,
     FoodPlanComponent,
     BackgroundComponent,
-    RotateButtonComponent
+    RotateButtonComponent,
+    NavigationArrowComponent
   ],
   imports: [
     BrowserModule,
