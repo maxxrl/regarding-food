@@ -1,10 +1,7 @@
 /* Animation area */
 
 .app-background {
-  background: black;
-  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
-  width: 100%;
-  height: 100vh;
+  background: #4e60c2;
 }
 
 .circles {
@@ -15,6 +12,8 @@
   height: 100%;
   overflow: hidden;
   z-index: -9999;
+  padding: 0;
+  margin: 0;
 }
 
 .circles li {

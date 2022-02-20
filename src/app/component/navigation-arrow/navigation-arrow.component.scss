@@ -1,5 +1,10 @@
-.navigation-arrow {
-  transform: scale(5);
-  text-align: center;
-  margin-top: 50px;
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-icon.mat-primary {
+  font-size: 150px;
+  color: white;
+  margin-right: 120px;
 }
