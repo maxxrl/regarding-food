@@ -13,6 +13,7 @@ import {AnimationService} from "../../service/animation.service";
 })
 export class FoodListComponent implements OnInit, AfterViewInit {
   foodList: Food[] = [];
+  addButtonTitle = "Add";
   displayedColumns: string[] = ['category', 'name', 'action'];
 
   // @ts-ignore

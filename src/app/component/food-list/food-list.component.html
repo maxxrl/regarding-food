@@ -1,9 +1,5 @@
-<div class="container text-center">
-  <h2>Food List</h2>
-
-  <div class="food-list-table">
-
-  <table mat-table [dataSource]="foodList" #mytable class="">
+<div class="food-list-table">
+  <table mat-table [dataSource]="foodList">
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
@@ -33,12 +29,7 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  </div>
-
 </div>
 
-<div class="add-button-container">
-<button (click)="openDialog('Add',{})" mat-fab color="primary" >
-  <mat-icon>add</mat-icon>
-</button>
-</div>
+<app-rotate-button (buttonClickEvent)="openDialog('Add', {})" [buttonText]=addButtonTitle></app-rotate-button>
+

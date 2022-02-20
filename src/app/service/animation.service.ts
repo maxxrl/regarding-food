@@ -17,7 +17,7 @@ export class AnimationService {
         scale: [14, 1],
         opacity: [0, 1],
         easing: "easeOutCirc",
-        duration: 3500,
+        duration: 1500,
         delay: (el: any, i: number) => 800 * i
       })
   }
