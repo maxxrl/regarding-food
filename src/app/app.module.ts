@@ -12,7 +12,7 @@ import {environment} from '../environments/environment';
 import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 import {AngularFireModule} from "@angular/fire/compat";
 import {FoodPickerComponent} from './component/food-picker/food-picker.component';
-import { FoodListComponent } from './component/food-list/food-list.component';
+import {FoodListComponent} from './component/food-list/food-list.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
@@ -23,10 +23,10 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {DialogBoxComponent} from './component/dialog-box/dialog-box.component';
 import {FormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
-import { FoodPlanComponent } from './component/food-plan/food-plan.component';
-import { BackgroundComponent } from './component/background/background.component';
-import { RotateButtonComponent } from './component/rotate-button/rotate-button.component';
-import { NavigationArrowComponent } from './component/navigation-arrow/navigation-arrow.component';
+import {FoodPlanComponent} from './component/food-plan/food-plan.component';
+import {BackgroundComponent} from './component/background/background.component';
+import {RotateButtonComponent} from './component/rotate-button/rotate-button.component';
+import {NavigationArrowComponent} from './component/navigation-arrow/navigation-arrow.component';
 
 
 @NgModule({
