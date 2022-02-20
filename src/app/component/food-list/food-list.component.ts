@@ -1,34 +1,30 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Food} from "../../FoodList";
 import {MatTable} from "@angular/material/table";
 import {DialogBoxComponent} from "../dialog-box/dialog-box.component";
 import {MatDialog} from "@angular/material/dialog";
 import {FirestoreService} from "../../service/firestore.service";
-import {AnimationService} from "../../service/animation.service";
 
 @Component({
   selector: 'app-food-list',
   templateUrl: './food-list.component.html',
   styleUrls: ['./food-list.component.scss']
 })
-export class FoodListComponent implements OnInit, AfterViewInit {
+export class FoodListComponent implements OnInit {
   foodList: Food[] = [];
   addButtonTitle = "Add";
   displayedColumns: string[] = ['category', 'name', 'action'];
+  tableHeaderRowColor = "#3f51b5";
 
   // @ts-ignore
   @ViewChild(MatTable, {static: true}) table: MatTable<any>;
 
   constructor(
     public dialog: MatDialog,
-    private firestoreService: FirestoreService,
-    private animationService: AnimationService
+    private firestoreService: FirestoreService
   ) {
   }
 
-  ngAfterViewInit() {
-    // this.animationService.animateTextByCssClass("food-list-table");
-  }
 
   ngOnInit(): void {
     this.firestoreService.getFoodList().subscribe((foodList: Food[]) => {
