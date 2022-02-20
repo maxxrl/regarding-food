@@ -9,10 +9,6 @@
   flex: 1;
 }
 
-.header, .content {
-  padding: 1em;
-}
-
 app-background {
   display: flex;
   align-items: stretch;
@@ -39,5 +35,4 @@ app-background {
     color: black;
   }
 }
-
 

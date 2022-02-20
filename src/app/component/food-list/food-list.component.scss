@@ -2,8 +2,8 @@
 :host {
   display: flex;
   flex-direction: column;
-  row-gap: 25px;
   align-items: center;
+  margin-top: 25px;
 }
 
 .mat-column-name {
@@ -32,6 +32,7 @@ table {
   overflow-y: auto;
   border: 1px solid black;
   padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 /* On screens that are 600px or less, set the background color to olive */
