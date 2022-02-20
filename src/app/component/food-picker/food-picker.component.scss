@@ -56,10 +56,10 @@
 }
 
 /* Responsive Styles */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 600px) {
   .button-picker-wrapper > *:not(.circle-link),
   .terminal {
-    width: 100%;
+    width: 95%;
   }
 
 }
