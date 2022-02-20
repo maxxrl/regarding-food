@@ -11,13 +11,10 @@
   font-weight: 600;
 }
 
-
-
 /* Logo upper left corner */
 .toolbar img {
   margin: 0 16px;
 }
-
 
 .content {
   display: flex;
@@ -27,9 +24,7 @@
   max-width: 960px;
   flex-direction: column;
   align-items: center;
-  height: calc(100vh - 200px)
 }
-
 
 .router-link-active {
   background: white;
@@ -37,47 +32,6 @@
   .material-icons {
     color: black;
   }
-}
-
-/* Background clouds */
-svg#clouds {
-  position: fixed;
-  bottom: -160px;
-  left: -230px;
-  z-index: -10;
-  width: 1920px;
-}
-
-footer {
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
-  line-height: 20px;
-}
-
-footer a {
-  display: flex;
-  align-items: center;
-}
-
-.button-picker-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.button-picker-wrapper .card:not(.highlight-card) {
-  cursor: pointer;
-}
-
-.button-picker-wrapper .card:not(.highlight-card):hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
-}
-
-.button-picker-wrapper .card:not(.highlight-card):hover .material-icons path {
-  fill: rgb(105, 103, 103);
 }
 
 .nav-spacer {

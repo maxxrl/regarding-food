@@ -1,37 +1,38 @@
-:host{
-  width:100%;
+:host {
+  width: 100%;
 }
 
-.add-button-container{
-  position:fixed;
+.add-button-container {
+  position: fixed;
   bottom: 40px;
   right: 50px;
 }
-h2{
-  text-align:center;
+
+h2 {
+  text-align: center;
   padding: 15px;
 }
 
 @media (max-width: 450px) {
-  .food-list-table{
+  .food-list-table {
     height: 35vh;
     overflow-y: scroll;
-    width:100%;
+    width: 100%;
 
   }
 }
 
 @media (min-width: 451px) {
 
-  .food-list-table{
+  .food-list-table {
     height: 35vh;
     overflow-y: scroll;
-    width:80%;
+    width: 80%;
     margin: 0 auto;
   }
 
 }
 
-table{
-  width:100%;
+table {
+  width: 100%;
 }
