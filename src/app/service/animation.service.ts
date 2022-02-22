@@ -14,7 +14,20 @@ export class AnimationService {
     anime.timeline({loop: false})
       .add({
         targets: '.' + cssClassName,
-        scale: [25, 1],
+        scale: [2, 1],
+        opacity: [0, 1],
+        easing: "easeOutCirc",
+        duration: [1000],
+        delay: (el: any, i: number) => 800 * i
+      })
+  }
+
+  public animateFinalWordByCssClass(cssClassName: string): void {
+    anime.timeline({loop: false})
+      .add({
+        targets: '.' + cssClassName,
+        scale: [16, 1],
+        rotate: [0, 720],
         opacity: [0, 1],
         easing: "easeOutCirc",
         duration: [1000],
@@ -27,9 +40,9 @@ export class AnimationService {
     anime.timeline({loop: false})
       .add({
         targets: '.' + cssClassName,
-        rotate: [0, 720],
-        duration: 5000,
-        elasticity: 500,
+        rotate: [0, 360],
+        duration: 3000,
+        elasticity: 150,
         easing: 'easeOutElastic',
         delay: (el: any, i: number) => 800 * i
       })

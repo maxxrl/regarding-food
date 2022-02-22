@@ -27,6 +27,7 @@ import {FoodPlanComponent} from './component/food-plan/food-plan.component';
 import {BackgroundComponent} from './component/background/background.component';
 import {RotateButtonComponent} from './component/rotate-button/rotate-button.component';
 import {NavigationArrowComponent} from './component/navigation-arrow/navigation-arrow.component';
+import {FoodTextComponent} from './component/food-text/food-text.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {NavigationArrowComponent} from './component/navigation-arrow/navigation-
     FoodPlanComponent,
     BackgroundComponent,
     RotateButtonComponent,
-    NavigationArrowComponent
+    NavigationArrowComponent,
+    FoodTextComponent
   ],
   imports: [
     BrowserModule,

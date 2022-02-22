@@ -1,9 +1,10 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {Category, Food} from "../../FoodList";
 import {FirestoreService} from "../../service/firestore.service";
 import {SessionStorageService} from "../../service/session-storage.service";
 import {RandomService} from "../../service/random.service";
 import {AnimationService} from "../../service/animation.service";
+import {FoodTextComponent} from "../food-text/food-text.component";
 
 @Component({
   selector: 'app-food-picker',
@@ -17,6 +18,9 @@ export class FoodPickerComponent implements AfterViewInit {
   pickedFood: Food = {name: "Search for food", category: Category.NONE};
   foodCategories: Category[] = [Category.NONE, Category.MEAT, Category.VEGETABLE, Category.RESTAURANT];
   buttonText = "Pick";
+
+  // @ts-ignore
+  @ViewChild(FoodTextComponent) foodTextComponent: FoodTextComponent;
 
   constructor(
     private firestoreService: FirestoreService,
@@ -50,8 +54,6 @@ export class FoodPickerComponent implements AfterViewInit {
   public chooseRandomWithFilter() {
     this.animationService.animateTextByCssClass(this.ANIMATION_CLASS_NAME)
     //get random value from array
-    this.randomService.chooseRandomFoodWithFilter(this.foodList, this.filter).then(value => {
-      this.pickedFood = value;
-    });
+    this.foodTextComponent.animateText(this.foodList, this.filter);
   }
 }

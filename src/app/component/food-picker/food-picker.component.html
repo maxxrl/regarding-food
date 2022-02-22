@@ -1,8 +1,6 @@
 <!-- Terminal -->
-<div class="terminal" [ngSwitch]="pickedFood">
-  <h1 class="terminal-text" *ngIf="pickedFood">
-    <pre class="word">{{pickedFood.name}}</pre>
-  </h1>
+<div>
+  <app-food-text></app-food-text>
 </div>
 
 <app-rotate-button [buttonText]=buttonText (buttonClickEvent)="rotateButtonClicked()"></app-rotate-button>
