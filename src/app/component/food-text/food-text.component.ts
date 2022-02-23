@@ -59,7 +59,7 @@ export class FoodTextComponent {
   setFinalElementStyle(element: HTMLElement | null) {
     if (element) {
       element.style.color = "#3f51b5";
-      element.style.fontSize = "35px";
+      element.style.fontSize = "30px";
     }
   }
 

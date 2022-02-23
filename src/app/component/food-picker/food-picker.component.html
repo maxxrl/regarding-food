@@ -8,9 +8,7 @@
 <mat-chip-list
   class="example-chip">
   <mat-chip
-    color="primary"
     (click)="selectedFilter(category)"
-    class="example-box"
     [ngClass]="{'active-filter': category === filter}"
     *ngFor="let category of foodCategories">
     {{category}}

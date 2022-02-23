@@ -26,7 +26,7 @@ export class AnimationService {
     anime.timeline({loop: false})
       .add({
         targets: '.' + cssClassName,
-        scale: [16, 1],
+        scale: [2, 1],
         rotate: [0, 720],
         opacity: [0, 1],
         easing: "easeOutCirc",
