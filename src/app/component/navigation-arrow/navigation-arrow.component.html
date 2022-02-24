@@ -1,6 +1,9 @@
-<div *ngIf="isFoodListRoute()" (click)=navigateToPicker() class="navigation-wrapper">
-  <mat-icon class="navigation-arrow" color="primary">keyboard_arrow_left</mat-icon>
-</div>
-<div *ngIf="isFoodPickerRoute()" (click)="navigateToList()" class="navigation-wrapper">
-  <mat-icon class="navigation-arrow" color="primary">keyboard_arrow_right</mat-icon>
-</div>
+<button *ngIf="isFoodListRoute()" routerLink="/pick-food" id="pick-food" mat-fab color="primary"
+        aria-label="Edit Food Button">
+  <mat-icon>keyboard_arrow_left</mat-icon>
+</button>
+
+<button *ngIf="isFoodPickerRoute()" routerLink="/list-food" id="edit-food" mat-fab color="primary"
+        aria-label="Edit Food Button">
+  <mat-icon>keyboard_arrow_right</mat-icon>
+</button>
