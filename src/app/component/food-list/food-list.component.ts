@@ -1,23 +1,26 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {Food} from "../../FoodList";
-import {MatTable} from "@angular/material/table";
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {Food, foodList} from "../../FoodList";
+import {MatTable, MatTableDataSource} from "@angular/material/table";
 import {DialogBoxComponent} from "../dialog-box/dialog-box.component";
 import {MatDialog} from "@angular/material/dialog";
 import {FirestoreService} from "../../service/firestore.service";
+import {MatSort} from '@angular/material/sort';
 
 @Component({
   selector: 'app-food-list',
   templateUrl: './food-list.component.html',
   styleUrls: ['./food-list.component.scss']
 })
-export class FoodListComponent implements OnInit {
+export class FoodListComponent implements OnInit, AfterViewInit {
   foodList: Food[] = [];
   addButtonTitle = "Add";
   displayedColumns: string[] = ['category', 'name', 'action'];
   tableHeaderRowColor = "#3f51b5";
+  dataSource = new MatTableDataSource(foodList);
 
   // @ts-ignore
   @ViewChild(MatTable, {static: true}) table: MatTable<any>;
+  @ViewChild('sortFoodList') sortFoodList = new MatSort();
 
   constructor(
     public dialog: MatDialog,
@@ -25,10 +28,12 @@ export class FoodListComponent implements OnInit {
   ) {
   }
 
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sortFoodList;
+  }
 
   ngOnInit(): void {
     this.firestoreService.getFoodList().subscribe((foodList: Food[]) => {
-      console.log("Retrieved foodlist", foodList);
       this.foodList = foodList;
     })
   }
