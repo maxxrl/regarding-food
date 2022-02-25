@@ -17,7 +17,6 @@ export class FoodListComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['category', 'name', 'action'];
   tableHeaderRowColor = "#3f51b5";
   dataSource = new MatTableDataSource(foodList);
-
   // @ts-ignore
   @ViewChild(MatTable, {static: true}) table: MatTable<any>;
   @ViewChild('sortFoodList') sortFoodList = new MatSort();
@@ -35,6 +34,7 @@ export class FoodListComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.firestoreService.getFoodList().subscribe((foodList: Food[]) => {
       this.foodList = foodList;
+      this.dataSource.data = foodList;
     })
   }
 
