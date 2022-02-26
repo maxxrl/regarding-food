@@ -5,8 +5,7 @@
 
 <app-rotate-button [buttonText]=buttonText (buttonClickEvent)="rotateButtonClicked()"></app-rotate-button>
 
-<mat-chip-list
-  class="example-chip">
+<mat-chip-list>
   <mat-chip
     (click)="selectedFilter(category)"
     [ngClass]="{'active-filter': category === filter}"

@@ -53,13 +53,14 @@ export class FoodTextComponent {
     if (element) {
       element.style.color = "white";
       element.style.fontSize = "25px";
+      element.style.textShadow = "none";
     }
   }
 
   setFinalElementStyle(element: HTMLElement | null) {
     if (element) {
-      element.style.color = "#3f51b5";
       element.style.fontSize = "30px";
+      element.style.textShadow = "2px 3px #3f51b5";
     }
   }
 
