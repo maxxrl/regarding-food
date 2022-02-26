@@ -1,29 +1,30 @@
-<h2>Dinner this week?</h2>
-<div class="food-list-table">
+<div class="food-plan-table">
+  <table mat-table [dataSource]="datasource" class="">
 
-  <table mat-table [dataSource]="foodWeek" #mytable class="">
-
-    <!-- Weekday Column -->
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Weekday</th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      <th mat-header-cell *matHeaderCellDef>Meal</th>
+      <td mat-cell *matCellDef="let element"> {{element.food.name}} </td>
     </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="weekday">
-      <th mat-header-cell *matHeaderCellDef>Dinner</th>
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef>Category</th>
       <td mat-cell *matCellDef="let element">
-        {{element.plan.dinner.name}}</td>
+        {{element.food.category}}</td>
     </ng-container>
 
+    <ng-container matColumnDef="weekday">
+      <th mat-header-cell *matHeaderCellDef>Day</th>
+      <td mat-cell *matCellDef="let element">
+        {{element.weekday.name}}</td>
+    </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" [style.background-color]="tableHeaderRowColor"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 </div>
 
 <div class="add-button-container">
-  <button (click)="generateFoodWeek()" mat-fab color="primary" >
+  <button (click)="clickNewPlan()" mat-fab color="primary">
     Create
   </button>
 </div>

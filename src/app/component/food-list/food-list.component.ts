@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {Food, foodList} from "../../FoodList";
+import {Food} from "../../FoodList";
 import {MatTable, MatTableDataSource} from "@angular/material/table";
 import {DialogBoxComponent} from "../dialog-box/dialog-box.component";
 import {MatDialog} from "@angular/material/dialog";
@@ -16,7 +16,7 @@ export class FoodListComponent implements OnInit, AfterViewInit {
   addButtonTitle = "Add";
   displayedColumns: string[] = ['category', 'name', 'action'];
   tableHeaderRowColor = "#3f51b5";
-  dataSource = new MatTableDataSource(foodList);
+  dataSource = new MatTableDataSource();
   // @ts-ignore
   @ViewChild(MatTable, {static: true}) table: MatTable<any>;
   @ViewChild('sortFoodList') sortFoodList = new MatSort();

@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Food, foodList, FoodPlan, FoodWeek} from "../../FoodList";
+import {Food, FoodWeek} from "../../FoodList";
 import {FirestoreService} from "../../service/firestore.service";
 import {SessionStorageService} from "../../service/session-storage.service";
 import {RandomService} from "../../service/random.service";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-food-plan',
@@ -10,11 +11,15 @@ import {RandomService} from "../../service/random.service";
   styleUrls: ['./food-plan.component.scss']
 })
 export class FoodPlanComponent implements OnInit {
-  foodList: Food[] = [];
-  displayedColumns: string[] = ['name', 'weekday'];
 
-  // @ts-ignore
-  foodWeek: FoodWeek[];
+  foodList: Food[] = [];
+  foodWeek: FoodWeek[] = [];
+
+
+  displayedColumns: string[] = ['weekday', 'name', 'category'];
+  datasource = new MatTableDataSource();
+  generateButtonTitle = "Generate";
+  tableHeaderRowColor = "#3f51b5";
 
   constructor(
     private firestoreService: FirestoreService,
@@ -22,26 +27,33 @@ export class FoodPlanComponent implements OnInit {
     private randomService: RandomService
   ) {
     this.foodWeek = this.sessionStorageService.getFoodWeek();
-
-
   }
 
   ngOnInit(): void {
     this.firestoreService.getFoodList().subscribe((foodList: Food[]) => {
       this.foodList = foodList;
-      this.randomService.chooseRandomFoodWeek(this.foodList).then(foodWeekResult => {
+      this.randomService.chooseRandomFoodWeek(foodList, 2, 2, 3).then(foodWeekResult => {
         this.foodWeek = foodWeekResult;
-        console.log(this.foodWeek, "Food Week");
+        this.sortPlanByWeek(this.foodWeek);
+        this.datasource.data = this.foodWeek;
       });
     })
   }
 
-  public generateFoodWeek(): void {
-    this.randomService.chooseRandomFoodWeek(this.foodList).then(foodWeekResult => {
-      this.foodWeek = foodWeekResult;
-      console.log(this.foodWeek, "Food Week");
-    });
+  public clickNewPlan(): void {
+
   }
 
+  private sortPlanByWeek(foodWeek: FoodWeek[]): void {
+    foodWeek.sort((a, b) => {
+      if (a.weekday.index > b.weekday.index) {
+        return 1;
+      }
+      if (a.weekday.index < b.weekday.index) {
+        return -1;
+      }
+      return 0;
+    });
+  }
 
 }

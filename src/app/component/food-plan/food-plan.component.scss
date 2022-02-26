@@ -1,38 +1,45 @@
+
 :host {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
 }
 
-.add-button-container {
-  position: fixed;
-  bottom: 40px;
-  right: 50px;
+.mat-column-name {
+  word-wrap: break-word;
+  width: calc(100% - 25px);
+  color: white;
+  text-align: left;
 }
 
-h2 {
-  text-align: center;
-  padding: 15px;
+.mat-column-category {
+  width: 100px;
+  color: white;
+  text-align: right;
 }
 
-@media (max-width: 450px) {
-  .food-list-table {
-    height: 35vh;
-    overflow-y: scroll;
-    width: 100%;
-
-  }
-}
-
-@media (min-width: 451px) {
-
-  .food-list-table {
-    height: 35vh;
-    overflow-y: scroll;
-    width: 80%;
-    margin: 0 auto;
-  }
-
+.mat-column-weekday {
+  width: 60px;
+  color: white;
+  text-align: left;
 }
 
 table {
-  width: 100%;
+  background-color: #202124;
+  width: 90vw;
+}
+
+.food-plan-table {
+  overflow-y: auto;
+  border: 1px solid black;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .food-plan-table {
+    height: 60vh;;
+  }
 }
