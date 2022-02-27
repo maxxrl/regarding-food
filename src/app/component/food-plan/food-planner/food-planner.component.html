@@ -1,0 +1,25 @@
+<h2>Pick your categories</h2>
+
+<button matBadgeColor="primary" mat-raised-button [matBadgeHidden]="counter.meat === 0" matBadge="{{counter.meat}}"
+        (click)="addCategory(meatCategory)">Meat
+</button>
+<button matBadgeColor="primary" mat-raised-button [matBadgeHidden]="counter.vegetable === 0"
+        matBadge="{{counter.vegetable}}"
+        (click)="addCategory(vegetableCategory)">Vegetable
+</button>
+<button matBadgeColor="primary" mat-raised-button [matBadgeHidden]="counter.restaurant === 0"
+        matBadge="{{counter.restaurant}}"
+        (click)="addCategory(restaurantCategory)">Restaurant
+</button>
+
+
+<div *ngIf="daysLeft !== 0" class="sub-title">You need <span>{{daysLeft}} more</span> to finish.</div>
+
+
+<div *ngIf="daysLeft === 0">
+  <button color="primary" (click)="createFoodplan()" mat-raised-button>Create food plan.</button>
+</div>
+
+<div>
+  <button color="warn" (click)="resetCategories()" mat-raised-button>Reset.</button>
+</div>

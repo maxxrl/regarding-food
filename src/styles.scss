@@ -27,3 +27,21 @@ div.mat-chip-list-wrapper {
     margin: 0;
   }
 }
+
+
+$ask-category-stepper-background: #202124;
+$full-background: #202124;
+$app-blue: #3f51b5;
+
+.mat-form-field ::placeholder {
+  color: white;
+}
+
+.mat-form-field {
+
+}
+
+mat-label {
+  color: white !important;
+}
+

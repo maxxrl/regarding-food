@@ -21,7 +21,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatDialogModule} from "@angular/material/dialog";
 import {DialogBoxComponent} from './component/dialog-box/dialog-box.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
 import {FoodPlanComponent} from './component/food-plan/food-plan.component';
 import {BackgroundComponent} from './component/background/background.component';
@@ -29,7 +29,10 @@ import {RotateButtonComponent} from './component/rotate-button/rotate-button.com
 import {NavigationArrowComponent} from './component/navigation-arrow/navigation-arrow.component';
 import {FoodTextComponent} from './component/food-text/food-text.component';
 import {MatSortModule} from "@angular/material/sort";
-
+import {MatStepperModule} from "@angular/material/stepper";
+import {MatSliderModule} from "@angular/material/slider";
+import {FoodPlannerComponent} from './component/food-plan/food-planner/food-planner.component';
+import {MatBadgeModule} from "@angular/material/badge";
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import {MatSortModule} from "@angular/material/sort";
     BackgroundComponent,
     RotateButtonComponent,
     NavigationArrowComponent,
-    FoodTextComponent
+    FoodTextComponent,
+    FoodPlannerComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +67,11 @@ import {MatSortModule} from "@angular/material/sort";
     MatButtonModule,
     FormsModule,
     MatSelectModule,
-    MatSortModule
+    MatSortModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    MatSliderModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

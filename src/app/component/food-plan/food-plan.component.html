@@ -1,4 +1,4 @@
-<div class="food-plan-table">
+<div class="food-plan-table" *ngIf="foodWeek.length > 0">
   <table mat-table [dataSource]="datasource" class="">
 
     <ng-container matColumnDef="name">
@@ -23,8 +23,10 @@
   </table>
 </div>
 
-<div class="add-button-container">
-  <button (click)="clickNewPlan()" mat-fab color="primary">
-    Create
+<app-food-planner *ngIf="foodWeek.length === 0" (buttonClickEvent)="createFoodPlan($event)"></app-food-planner>
+
+<div class="add-button-container" *ngIf="foodWeek.length > 0">
+  <button (click)="resetFoodPlan()" mat-fab color="primary">
+    Reset
   </button>
 </div>

@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Food, FoodWeek} from "../../FoodList";
+import {CategoryCounter, Food, FoodWeek} from "../../FoodList";
 import {FirestoreService} from "../../service/firestore.service";
 import {SessionStorageService} from "../../service/session-storage.service";
 import {RandomService} from "../../service/random.service";
 import {MatTableDataSource} from "@angular/material/table";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-food-plan',
@@ -15,7 +16,6 @@ export class FoodPlanComponent implements OnInit {
   foodList: Food[] = [];
   foodWeek: FoodWeek[] = [];
 
-
   displayedColumns: string[] = ['weekday', 'name', 'category'];
   datasource = new MatTableDataSource();
   generateButtonTitle = "Generate";
@@ -24,15 +24,20 @@ export class FoodPlanComponent implements OnInit {
   constructor(
     private firestoreService: FirestoreService,
     private sessionStorageService: SessionStorageService,
-    private randomService: RandomService
+    private randomService: RandomService,
+    private router: Router
   ) {
     this.foodWeek = this.sessionStorageService.getFoodWeek();
   }
 
   ngOnInit(): void {
+
+  }
+
+  public createFoodPlan(counter: CategoryCounter): void {
     this.firestoreService.getFoodList().subscribe((foodList: Food[]) => {
       this.foodList = foodList;
-      this.randomService.chooseRandomFoodWeek(foodList, 2, 2, 3).then(foodWeekResult => {
+      this.randomService.chooseRandomFoodWeek(foodList, counter.restaurant, counter.meat, counter.vegetable).then(foodWeekResult => {
         this.foodWeek = foodWeekResult;
         this.sortPlanByWeek(this.foodWeek);
         this.datasource.data = this.foodWeek;
@@ -40,8 +45,9 @@ export class FoodPlanComponent implements OnInit {
     })
   }
 
-  public clickNewPlan(): void {
-
+  public resetFoodPlan(): void {
+    this.foodWeek = [];
+    this.datasource.data = [];
   }
 
   private sortPlanByWeek(foodWeek: FoodWeek[]): void {
