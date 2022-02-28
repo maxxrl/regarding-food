@@ -26,7 +26,7 @@
 <app-food-planner *ngIf="foodWeek.length === 0" (buttonClickEvent)="createFoodPlan($event)"></app-food-planner>
 
 <div class="add-button-container" *ngIf="foodWeek.length > 0">
-  <button (click)="resetFoodPlan()" mat-fab color="primary">
+  <button (click)="resetFoodPlan()" mat-fab color="warn">
     Reset
   </button>
 </div>
