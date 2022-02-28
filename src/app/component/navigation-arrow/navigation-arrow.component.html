@@ -1,9 +1,19 @@
-<button *ngIf="isFoodListRoute()" routerLink="/pick-food" id="pick-food" mat-fab color="primary"
-        aria-label="Edit Food Button">
+<button *ngIf="isFoodListRoute()" routerLink="/pick-food" class="left-arrow-icon-wrapper" mat-fab color="primary"
+        aria-label="Nav Arrow left">
   <mat-icon>keyboard_arrow_left</mat-icon>
 </button>
 
-<button *ngIf="isFoodPickerRoute()" routerLink="/list-food" id="edit-food" mat-fab color="primary"
+<button *ngIf="isFoodListRoute()" routerLink="/plan-food" class="right-arrow-icon-wrapper" mat-fab color="primary"
+        aria-label="Nav Arrow Right">
+  <mat-icon>keyboard_arrow_right</mat-icon>
+</button>
+
+<button *ngIf="isFoodPlanRoute()" routerLink="/list-food" class="left-arrow-icon-wrapper" mat-fab color="primary"
+        aria-label="Nav Arrow left">
+  <mat-icon>keyboard_arrow_left</mat-icon>
+</button>
+
+<button *ngIf="isFoodPickerRoute()" routerLink="/list-food" class="right-arrow-icon-wrapper" mat-fab color="primary"
         aria-label="Edit Food Button">
   <mat-icon>keyboard_arrow_right</mat-icon>
 </button>

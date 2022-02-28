@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
@@ -8,21 +8,19 @@ import {Router} from "@angular/router";
 })
 export class NavigationArrowComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
-  navigateToList(): void {
-    this.router.navigate(['list-food']);
-  }
-
-  navigateToPicker(): void {
-    this.router.navigate(['pick-food']);
-  }
 
   public isFoodPickerRoute(): boolean {
     return this.router.url === "/pick-food";
+  }
+
+  public isFoodPlanRoute(): boolean {
+    return this.router.url === "/plan-food";
   }
 
   public isFoodListRoute(): boolean {
