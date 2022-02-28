@@ -1,3 +1,4 @@
+@import "../../../styles";
 
 :host {
   display: flex;
@@ -60,4 +61,11 @@ app-food-planner {
 
 }
 
+.highlight-today {
+  font-weight: 800 !important;
+
+  td {
+    opacity: 0.3;
+  }
+}
 

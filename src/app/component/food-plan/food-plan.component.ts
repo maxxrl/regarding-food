@@ -37,6 +37,47 @@ export class FoodPlanComponent implements OnInit {
 
   }
 
+  public isToday(foodWeek: FoodWeek): boolean {
+
+    const dateMappingList =
+      [
+        {
+          index: 1,
+          name: 'Mo'
+        },
+        {
+          index: 2,
+          name: 'Di'
+        },
+        {
+          index: 3,
+          name: 'Mi'
+        },
+        {
+          index: 4,
+          name: 'Do'
+        },
+        {
+          index: 5,
+          name: 'Fr'
+        },
+        {
+          index: 6,
+          name: 'Sa'
+        },
+        {
+          index: 0,
+          name: 'So'
+        }
+      ];
+    const weekDay = new Date().getDay();
+    const filter = dateMappingList.filter(value => value.index === weekDay);
+
+    return foodWeek.weekday.name === filter[0].name
+
+
+  }
+
   public createFoodPlan(counter: CategoryCounter): void {
     this.firestoreService.getFoodList().subscribe((foodList: Food[]) => {
       this.foodList = foodList;
