@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {CategoryCounter, Food, FoodWeek} from "../../FoodList";
 import {FirestoreService} from "../../service/firestore.service";
 import {SessionStorageService} from "../../service/session-storage.service";
 import {RandomService} from "../../service/random.service";
 import {MatTableDataSource} from "@angular/material/table";
+import {Food} from "../../model/food.model";
+import {FoodWeek} from "../../model/week.model";
+import {CategoryCounter} from "../../model/category.model";
 
 @Component({
   selector: 'app-food-plan',
@@ -26,7 +28,6 @@ export class FoodPlanComponent implements OnInit {
     private randomService: RandomService
   ) {
     this.sessionStorageService.getFoodWeek().then(foodWeek => {
-      console.log(foodWeek, "promise");
       this.foodWeek = foodWeek;
       this.datasource.data = foodWeek;
     }).catch(reason => this.foodWeek = []);
@@ -41,7 +42,6 @@ export class FoodPlanComponent implements OnInit {
       this.foodList = foodList;
       this.randomService.chooseRandomFoodWeek(foodList, counter.restaurant, counter.meat, counter.vegetable).then(foodWeekResult => {
         this.foodWeek = foodWeekResult;
-        console.log(this.foodWeek, "foodwek saved");
         this.sortPlanByWeek(this.foodWeek);
         this.datasource.data = this.foodWeek;
         this.sessionStorageService.saveFoodWeek(foodWeekResult)

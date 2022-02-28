@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Category, CategoryCounter} from "../../../FoodList";
+import {Category, CategoryCounter} from "../../../model/category.model";
 
 @Component({
   selector: 'app-food-planner',

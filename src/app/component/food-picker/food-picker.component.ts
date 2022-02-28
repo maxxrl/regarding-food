@@ -1,10 +1,11 @@
 import {AfterViewInit, Component, ViewChild} from '@angular/core';
-import {Category, Food} from "../../FoodList";
 import {FirestoreService} from "../../service/firestore.service";
 import {SessionStorageService} from "../../service/session-storage.service";
 import {RandomService} from "../../service/random.service";
 import {AnimationService} from "../../service/animation.service";
 import {FoodTextComponent} from "../food-text/food-text.component";
+import {Food} from "../../model/food.model";
+import {Category} from "../../model/category.model";
 
 @Component({
   selector: 'app-food-picker',

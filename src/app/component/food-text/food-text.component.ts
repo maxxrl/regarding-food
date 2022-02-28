@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
-import {Category, Food} from "../../FoodList";
 import {RandomService} from "../../service/random.service";
 import {AnimationService} from "../../service/animation.service";
+import {Food} from "../../model/food.model";
+import {Category} from "../../model/category.model";
 
 @Component({
   selector: 'app-food-text',

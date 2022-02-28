@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Category, FoodWeek} from "../FoodList";
+import {Category} from "../model/category.model";
+import {FoodWeek} from "../model/week.model";
+
 
 @Injectable({
   providedIn: 'root'
@@ -25,10 +27,9 @@ export class SessionStorageService {
   public getFoodWeek(): Promise<FoodWeek[]> {
     return new Promise<FoodWeek[]>((resolve, reject) => {
       const foodWeekString = sessionStorage.getItem(this.FOOD_WEEK);
-      console.log(foodWeekString, "foodweekstring");
       if (foodWeekString) {
         resolve(JSON.parse(foodWeekString))
-      } else{
+      } else {
         reject("No food in sessionstorage");
       }
     })
@@ -38,7 +39,7 @@ export class SessionStorageService {
     sessionStorage.setItem(this.FOOD_WEEK, JSON.stringify(foodWeek));
   }
 
-  public deleteFoodWeek(): void{
+  public deleteFoodWeek(): void {
     sessionStorage.removeItem(this.FOOD_WEEK);
   }
 

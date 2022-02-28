@@ -9,7 +9,7 @@
     <ng-container matColumnDef="category">
       <th mat-header-cell *matHeaderCellDef>Category</th>
       <td mat-cell *matCellDef="let element">
-        {{element.food.category}}</td>
+        {{element.food.category === "VEGETABLE" ? "VEGGIE" : element.food.category}}</td>
     </ng-container>
 
     <ng-container matColumnDef="weekday">

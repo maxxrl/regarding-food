@@ -1,10 +1,10 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {Food} from "../../FoodList";
 import {MatTable, MatTableDataSource} from "@angular/material/table";
 import {DialogBoxComponent} from "../dialog-box/dialog-box.component";
 import {MatDialog} from "@angular/material/dialog";
 import {FirestoreService} from "../../service/firestore.service";
 import {MatSort} from '@angular/material/sort';
+import {Food} from "../../model/food.model";
 
 @Component({
   selector: 'app-food-list',

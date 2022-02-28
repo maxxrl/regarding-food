@@ -10,7 +10,7 @@
     (click)="selectedFilter(category)"
     [ngClass]="{'active-filter': category === filter}"
     *ngFor="let category of foodCategories">
-    {{category}}
+    {{category === "VEGETABLE" ? "VEGGIE" : category}}
   </mat-chip>
 </mat-chip-list>
 

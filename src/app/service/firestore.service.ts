@@ -10,8 +10,9 @@ import {
   setDoc,
   updateDoc
 } from "@angular/fire/firestore";
-import {Category, Food} from "../FoodList";
 import {Observable, Subject} from "rxjs";
+import {Food} from "../model/food.model";
+import {Category} from "../model/category.model";
 
 @Injectable({
   providedIn: 'root'
