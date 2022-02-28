@@ -1,4 +1,4 @@
-<div class="food-plan-table" *ngIf="foodWeek.length > 0">
+<div class="food-plan-table" *ngIf="foodWeek && foodWeek.length > 0">
   <table mat-table [dataSource]="datasource" class="">
 
     <ng-container matColumnDef="name">

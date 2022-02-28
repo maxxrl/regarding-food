@@ -4,7 +4,6 @@ import {FirestoreService} from "../../service/firestore.service";
 import {SessionStorageService} from "../../service/session-storage.service";
 import {RandomService} from "../../service/random.service";
 import {MatTableDataSource} from "@angular/material/table";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-food-plan',
@@ -24,10 +23,13 @@ export class FoodPlanComponent implements OnInit {
   constructor(
     private firestoreService: FirestoreService,
     private sessionStorageService: SessionStorageService,
-    private randomService: RandomService,
-    private router: Router
+    private randomService: RandomService
   ) {
-    this.foodWeek = this.sessionStorageService.getFoodWeek();
+    this.sessionStorageService.getFoodWeek().then(foodWeek => {
+      console.log(foodWeek, "promise");
+      this.foodWeek = foodWeek;
+      this.datasource.data = foodWeek;
+    }).catch(reason => this.foodWeek = []);
   }
 
   ngOnInit(): void {
@@ -39,8 +41,10 @@ export class FoodPlanComponent implements OnInit {
       this.foodList = foodList;
       this.randomService.chooseRandomFoodWeek(foodList, counter.restaurant, counter.meat, counter.vegetable).then(foodWeekResult => {
         this.foodWeek = foodWeekResult;
+        console.log(this.foodWeek, "foodwek saved");
         this.sortPlanByWeek(this.foodWeek);
         this.datasource.data = this.foodWeek;
+        this.sessionStorageService.saveFoodWeek(foodWeekResult)
       });
     })
   }
@@ -48,6 +52,7 @@ export class FoodPlanComponent implements OnInit {
   public resetFoodPlan(): void {
     this.foodWeek = [];
     this.datasource.data = [];
+    this.sessionStorageService.deleteFoodWeek();
   }
 
   private sortPlanByWeek(foodWeek: FoodWeek[]): void {

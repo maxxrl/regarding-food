@@ -30,7 +30,12 @@ export class RandomService {
   }
 
   public chooseRandomFoodWeek(foodList: Food[], countRestaurant: number, countMeat: number, countVegetable: number): Promise<FoodWeek[]> {
+
     return new Promise<FoodWeek[]>((res, rej) => {
+      console.log(foodList, "list");
+      console.log(countMeat, "meat count");
+      console.log(countVegetable, "veg count");
+      console.log(countRestaurant, "restaur count");
       const foodWeek: FoodWeek[] = [];
       let weekDays: Weekday[] = [
         {name: Day.MONDAY, index: 0},
@@ -41,11 +46,11 @@ export class RandomService {
         {name: Day.SATURDAY, index: 5},
         {name: Day.SUNDAY, index: 6}
       ]
-
-      this.addFoodToFoodWeekByCategoryAndCount(Category.VEGETABLE, countVegetable, foodList, weekDays, foodWeek);
       this.addFoodToFoodWeekByCategoryAndCount(Category.RESTAURANT, countRestaurant, foodList, weekDays, foodWeek);
+      this.addFoodToFoodWeekByCategoryAndCount(Category.VEGETABLE, countVegetable, foodList, weekDays, foodWeek);
       this.addFoodToFoodWeekByCategoryAndCount(Category.MEAT, countMeat, foodList, weekDays, foodWeek);
-      res(foodWeek);
+      const shuffledFoodWeek = foodWeek.sort((a, b) => 0.5 - Math.random());
+      res(shuffledFoodWeek);
     })
   }
 

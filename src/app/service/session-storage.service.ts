@@ -10,7 +10,7 @@ export class SessionStorageService {
   }
 
   public FILTER_KEY = "FILTER";
-  public FOOD_WEEK = "FOOT_WEEK";
+  public FOOD_WEEK = "FOOD_WEEK";
 
 
   public getFilter(): Category {
@@ -22,16 +22,24 @@ export class SessionStorageService {
     sessionStorage.setItem(this.FILTER_KEY, value);
   }
 
-  public getFoodWeek(): FoodWeek[] {
-    const foodWeekString = sessionStorage.getItem(this.FOOD_WEEK);
-    if (foodWeekString) {
-      return JSON.parse(foodWeekString);
-    }
-    return [];
+  public getFoodWeek(): Promise<FoodWeek[]> {
+    return new Promise<FoodWeek[]>((resolve, reject) => {
+      const foodWeekString = sessionStorage.getItem(this.FOOD_WEEK);
+      console.log(foodWeekString, "foodweekstring");
+      if (foodWeekString) {
+        resolve(JSON.parse(foodWeekString))
+      } else{
+        reject("No food in sessionstorage");
+      }
+    })
   }
 
-  public saveFoodWeek(foodWeek: FoodWeek): void {
+  public saveFoodWeek(foodWeek: FoodWeek[]): void {
     sessionStorage.setItem(this.FOOD_WEEK, JSON.stringify(foodWeek));
+  }
+
+  public deleteFoodWeek(): void{
+    sessionStorage.removeItem(this.FOOD_WEEK);
   }
 
 
