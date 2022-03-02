@@ -1,0 +1,334 @@
+[
+  {
+    "name": "La Scala",
+    "action": "Update",
+    "category": "RESTAURANT",
+    "id": "43z586ktCBsfXQ8ghWt9"
+  },
+  {
+    "name": "Gschlagene mit \nKartoffelbrei und Soße",
+    "id": "4jaGVo1dw71KWhAX9xC1",
+    "category": "MEAT"
+  },
+  {
+    "name": "Hamburger",
+    "category": "MEAT",
+    "id": "6Vx23zi5udFTsg3wCnwo"
+  },
+  {
+    "category": "MEAT",
+    "name": "Bifteki mit Reis",
+    "id": "7Og2eT6lz40VooURMJBQ"
+  },
+  {
+    "id": "9ZSkkGSZYWXm6ZhDdgfu",
+    "name": "Pfannkuchen mit \nHackfleisch",
+    "category": "MEAT"
+  },
+  {
+    "action": "Update",
+    "name": "Risotto mit Pilzen",
+    "category": "VEGETABLE",
+    "id": "AKxoxo0HU9L8BtK0bWqk"
+  },
+  {
+    "category": "MEAT",
+    "name": "Spaghetti Bolognese",
+    "id": "AkLm7YYj7Qn7uCtk61Zn"
+  },
+  {
+    "name": "Spaghetti Carbonara",
+    "category": "MEAT",
+    "id": "COG02lzoS0xf6t7iEfVE"
+  },
+  {
+    "action": "Update",
+    "id": "CVEOXxavknZr4xHPKii6",
+    "category": "RESTAURANT",
+    "name": "Thai @Bahnschiene"
+  },
+  {
+    "category": "MEAT",
+    "name": "Flammkuchen",
+    "id": "DH7uzvCAwXPMnTVAUq1x"
+  },
+  {
+    "name": "Kürbissuppe",
+    "id": "DWfR7Rr3X2A17kagVgU4",
+    "category": "VEGETABLE"
+  },
+  {
+    "id": "EH3iZYxfGopQF4vJUuup",
+    "name": "Thai-Curry Nuss-Kokos Hühnchen",
+    "action": "Update",
+    "category": "MEAT"
+  },
+  {
+    "category": "MEAT",
+    "name": "Schupfnudeln",
+    "id": "EfpPAHLlIB79Qbcx5RdT"
+  },
+  {
+    "id": "GCaKfe84kuI5EUZuy7dP",
+    "name": "Eier in Senfsoße",
+    "category": "MEAT"
+  },
+  {
+    "id": "H1Ylh1TQMO9wJYuANbEQ",
+    "name": "Messina",
+    "category": "RESTAURANT",
+    "action": "Update"
+  },
+  {
+    "id": "HG3dMyXmiQJKhY6Fixvr",
+    "category": "VEGETABLE",
+    "name": "Spinat mit Eiern und Feta"
+  },
+  {
+    "id": "I68silEr1fYYFzmpdqB0",
+    "name": "Porridge ",
+    "category": "VEGETABLE"
+  },
+  {
+    "category": "MEAT",
+    "name": "Linsen mit Spätzle",
+    "id": "IZlZkeDz6JasVenwf2tk"
+  },
+  {
+    "id": "J8fqNhPp0Wtx0lBbkAAx",
+    "category": "MEAT",
+    "name": "Lasagne"
+  },
+  {
+    "id": "K6XjqcI2IuUmCdMjJUOj",
+    "category": "MEAT",
+    "name": "Vespern"
+  },
+  {
+    "category": "VEGETABLE",
+    "name": "Waffeln",
+    "id": "KHfGdBuMeeVklOnfPnZJ"
+  },
+  {
+    "name": "Pizza",
+    "category": "MEAT",
+    "id": "Kr3PUy5GEkHPCQ9q7yTi"
+  },
+  {
+    "id": "LVcDPric7Z4nSijA5Trm",
+    "category": "MEAT",
+    "name": "Ei im Glaß"
+  },
+  {
+    "category": "MEAT",
+    "id": "NDgtGHBdZnFZvBr4lq8y",
+    "name": "Hackbraten mit \nKartoffelbrei"
+  },
+  {
+    "category": "VEGETABLE",
+    "name": "Grießbrei",
+    "id": "NV3VtKGtJ2Sj7AGwmvcM"
+  },
+  {
+    "category": "RESTAURANT",
+    "name": "Mc Donalds",
+    "id": "OeffpEXFpCaJaBjleQBU",
+    "action": "Update"
+  },
+  {
+    "category": "MEAT",
+    "id": "QOwKbQr7LnElqdYp8RlM",
+    "name": "Chilli Con Carne"
+  },
+  {
+    "category": "VEGETABLE",
+    "name": "Apfelküchle",
+    "id": "RFanfZKeaQv08oECynwI"
+  },
+  {
+    "category": "MEAT",
+    "id": "RvLyMKBzBD0HetidCnxE",
+    "name": "Cevapcici"
+  },
+  {
+    "id": "SII35UKBRnjsCZPc5lOv",
+    "category": "VEGETABLE",
+    "name": "Nudelsalat"
+  },
+  {
+    "id": "UR1HMoYwXUpyXibV4oNN",
+    "category": "RESTAURANT",
+    "action": "Update",
+    "name": "Burger King"
+  },
+  {
+    "category": "RESTAURANT",
+    "id": "V4KvaTChnphxOBMQeXau",
+    "name": "Ranken",
+    "action": "Update"
+  },
+  {
+    "name": "Süße Pfannkuchen",
+    "id": "Whk7djgQAOaWW93Gecum",
+    "category": "VEGETABLE"
+  },
+  {
+    "name": "Hot-Dog Rolle",
+    "id": "YMSkxVedwVKSyJVlwnUB",
+    "category": "MEAT"
+  },
+  {
+    "category": "MEAT",
+    "name": "Omelette",
+    "id": "aVfw5o6kGU5C4bFaY4JQ"
+  },
+  {
+    "name": "Thai @Eriskirch",
+    "action": "Update",
+    "id": "bElkQKd7czrR7KtPEdoO",
+    "category": "RESTAURANT"
+  },
+  {
+    "id": "cBtZHRWtcHQ4yWp6UIDn",
+    "category": "VEGETABLE",
+    "name": "Spiegeleier mit Toast"
+  },
+  {
+    "name": "Big-Mac Rolle",
+    "category": "MEAT",
+    "id": "cHdrnqToSjkDinJVFyzI"
+  },
+  {
+    "category": "MEAT",
+    "name": "Currywurst",
+    "id": "gifpWrsASMocbbLQiWEq"
+  },
+  {
+    "id": "hH4WqM1IE8NEKcnfrjqf",
+    "category": "MEAT",
+    "name": "Schupfnudelpfanne"
+  },
+  {
+    "id": "hTsQxL1eShD5gAUkqKVy",
+    "name": "Hot-Dogs",
+    "category": "MEAT"
+  },
+  {
+    "name": "Risotto mit Pilzen",
+    "id": "hZz6FpCaeZPPlsxev6zI",
+    "category": "VEGETABLE"
+  },
+  {
+    "id": "ijXcz7QxCGxbqdxJEhRJ",
+    "name": "Lasagne",
+    "category": "MEAT"
+  },
+  {
+    "category": "MEAT",
+    "id": "j3zFfWy2wHZNP5wmgX2f",
+    "name": "Chilli Con Carne"
+  },
+  {
+    "id": "je85AAppJGLyFjjPROZp",
+    "category": "MEAT",
+    "name": "Schupfnudeln"
+  },
+  {
+    "name": "Nudelsalat",
+    "category": "VEGETABLE",
+    "id": "jyjGTM8pznuoXuj8Pe9c"
+  },
+  {
+    "category": "MEAT",
+    "name": "Gulasch",
+    "id": "kO2BPlLhcCnUuUql6Yo2"
+  },
+  {
+    "name": "Omelette",
+    "category": "MEAT",
+    "id": "l9e7z1K84DnoiHyssvoW"
+  },
+  {
+    "id": "lML5VsCom9oVvcY59IYO",
+    "name": "Ofenkäse",
+    "category": "VEGETABLE"
+  },
+  {
+    "category": "MEAT",
+    "name": "Maultaschen",
+    "id": "m2vsBZxsGFKHJaEdvI5H"
+  },
+  {
+    "name": "Disney Land \nSpezialität",
+    "action": "Update",
+    "id": "q4Z47poKkYs6ASdCSDEl",
+    "category": "MEAT"
+  },
+  {
+    "name": "Quarkbällchen",
+    "category": "VEGETABLE",
+    "id": "rSlSJc8kofTkdt4Ra19g"
+  },
+  {
+    "name": "Döner Kaufland",
+    "id": "sBSuYu9RhKwf5V6y1W6H",
+    "category": "RESTAURANT",
+    "action": "Update"
+  },
+  {
+    "id": "smoK0Dns7WWdPUtSpjGC",
+    "category": "MEAT",
+    "name": "Spaghetti Carbonara"
+  },
+  {
+    "id": "sq9Q7r1F2RWPOFB1s5Kh",
+    "category": "MEAT",
+    "name": "Sandwiches"
+  },
+  {
+    "category": "VEGETABLE",
+    "id": "unPeFKOYg1cR8QOXce5u",
+    "name": "Spinat-Frischkäse Nudeln"
+  },
+  {
+    "category": "MEAT",
+    "name": "Butter Chicken mit Nan",
+    "id": "vPbPRIiIK6UksNRV3vGK"
+  },
+  {
+    "category": "MEAT",
+    "name": "Pfannkuchen mit \nSchinken / Mais",
+    "id": "w6lqGlgFEwOvDPsUGI30"
+  },
+  {
+    "id": "wppoQkg6DimqPs85dZ7e",
+    "category": "MEAT",
+    "name": "Maultaschen"
+  },
+  {
+    "id": "xLZ6Rl30EWjIklOuV3xD",
+    "name": "Salat mit Fleisch",
+    "category": "MEAT"
+  },
+  {
+    "category": "MEAT",
+    "id": "zKz1rCcOqbjaP5f6qy6s",
+    "name": "Rahmgeschnetzeltes"
+  },
+  {
+    "category": "RESTAURANT",
+    "id": "zWlU18YUga9vGClY0Nha",
+    "action": "Update",
+    "name": "Ranken"
+  },
+  {
+    "id": "zfexGA6kbcvi31VnJP4n",
+    "name": "Wurstsalat",
+    "category": "MEAT"
+  },
+  {
+    "name": "Gulasch",
+    "category": "MEAT",
+    "id": "zhGHa88b9mW07Y45QVSX"
+  }
+]
